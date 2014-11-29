@@ -1,21 +1,21 @@
 'use strict';
 
 module.exports = {
-  db: 'mongodb://localhost/mean-dev1',
-	debug: 'true',
+  db:  process.env.AGNI_MONGODB_URL || 'mongodb://localhost/agni-dev',
+  debug: 'true',
   mongoose: {
     debug: false
   },
   app: {
-    name: 'MEAN - FullStack JS - Development'
+    name: 'AGNI Fitness'
   },
   facebook: {
-    clientID: 'DEFAULT_APP_ID',
-    clientSecret: 'APP_SECRET',
+    clientID: '1495105934103825',
+    clientSecret:  '05e5fa118a171a3c3025ec70de7807f1',
     callbackURL: 'http://localhost:3000/auth/facebook/callback'
   },
   twitter: {
-    clientID: 'DEFAULT_CONSUMER_KEY',
+    clientID: 'TWITTER_CONSUMER_KEY',
     clientSecret: 'CONSUMER_SECRET',
     callbackURL: 'http://localhost:3000/auth/twitter/callback'
   },

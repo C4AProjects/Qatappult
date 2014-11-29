@@ -250,3 +250,51 @@
   font-size:14px;
   margin-left:0;
 }
+
+
+body { background-color:#eee; font-size:16px}
+
+.feature { background-color:#135A66; background-image:url(/system/assets/img/bg-feature-01.jpg); background-size: cover; margin-top:50px; padding:30px}
+.feature h1, .feature h2  { color:#fff}
+.feature h1 { font-size:4.5em}
+.feature h2 { font-size:1.6em}
+
+.feature .quickform { background-color:rgba(0,0,0,.4); padding:20px 30px}
+.feature .quickform label {color:#fff; font-weight:normal; font-size:1.4em}
+.feature .quickform .form-group { margin-bottom:30px}
+.feature .feature-text { padding:0px 30px}
+
+.container-steps { padding:20px 50px}
+
+.container-steps h3 {color:#570120; margin-bottom:20px}
+.container-steps h6 {color:#666; font-size:1.2em; font-weight:normal}
+.container-steps .badge {background-color:#570120; font-size:1.5em; border-radius:50px; display:inline-block; height:40px; width:40px; padding:8px; margin:10px 0; font-weight:lighter}
+
+
+.textcolor-primary {color:#570120}
+
+
+.body-container  { background-color:#fff; padding:50px}
+.footer-container {padding:20px 50px}
+
+h1 { font-size:3.5em; font-weight:200; margin:1em 0 .5em}
+h2 { font-size:2.8em; font-weight:200}
+h3 { font-size:2.0em; font-weight:200}
+h4 { font-size:1.6em; font-weight:200}
+h5 { font-size:1em; font-weight:bold}
+
+
+
+a.list-group-item,
+.list-group-item  { background-color:#fff; color:#999; font-weight:normal; border-color:#ddd}
+
+a.list-group-item:hover,
+a.list-group-item:focus
+.list-group-item:hover,
+.list-group-item:focus
+{background-color:#eee; color:#000; border-color:#ddd}
+
+.list-group-item.active, 
+.list-group-item.active:hover, 
+.list-group-item.active:focus
+{ background-color:#eee; color:#000; font-weight:bold; border-color:#ddd;}

@@ -19,7 +19,7 @@ var StaffSchema = new Schema({
   rate: {
         min: Number,
         med: Number,
-        max: Numeber
+        max: Number
   },
   description: {
     type: String,

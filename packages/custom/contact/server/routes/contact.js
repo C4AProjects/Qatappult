@@ -12,8 +12,8 @@ module.exports = function(Contact, app, auth, database) {
     .post(auth.requiresLogin, contacts.create);
   app.route('/v1/contacts/:contactId')
     .get(contacts.show)
-    .put(auth.requiresLogin, hasAuthorization, contacts.update)
-    .delete(auth.requiresLogin, hasAuthorization, contacts.del);  
+    .put(auth.requiresLogin, contacts.update)
+    .delete(auth.requiresLogin, contacts.del);  
   // Finish with setting up the contactId param
   app.param('contactId', contacts.contact);
 };

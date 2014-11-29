@@ -12,8 +12,8 @@ module.exports = function(Project, app, auth, database) {
     .post(auth.requiresLogin, projects.create);
   app.route('/v1/projects/:projectId')
     .get(projects.show)
-    .put(auth.requiresLogin, hasAuthorization, projects.update)
-    .delete(auth.requiresLogin, hasAuthorization, projects.del);  
+    .put(auth.requiresLogin, projects.update)
+    .delete(auth.requiresLogin, projects.del);  
   // Finish with setting up the projectId param
   app.param('projectId', projects.project);
 };

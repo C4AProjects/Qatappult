@@ -32,8 +32,8 @@ module.exports = function(Company, app, auth, database) {
     .post(auth.requiresLogin, companies.create);
   app.route('/v1/companies/:companyId')
     .get(companies.show)
-    .put(auth.requiresLogin, hasAuthorization, companies.update)
-    .delete(auth.requiresLogin, hasAuthorization, companies.del);
+    .put(auth.requiresLogin, companies.update)
+    .delete(auth.requiresLogin, companies.del);
   app.route('/v1/companies/search/:name')
     .get(companies.searchByName)
   app.route('/v1/companies/:companyId/contacts')

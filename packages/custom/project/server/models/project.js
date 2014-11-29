@@ -40,6 +40,11 @@ var ProjectSchema = new Schema({
   company: {
     type: Schema.ObjectId,
     ref: 'Company'
+  },
+  status: {
+    type: String,
+    default: 'started', //started, inprogress, ended, canceled, closed, [removed] etc.
+    trim: true
   }
 });
 

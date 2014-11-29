@@ -7,6 +7,58 @@ var mongoose = require('mongoose'),
   Company = mongoose.model('Company'),
   _ = require('lodash');
 
+/**
+ * Search company by name
+ */
+exports.searchByName = function(req, res){
+    var regex = new RegExp(req.params.name, 'gi');
+    Company
+    .find({name:regex})
+    .sort({created:-1})
+    .limit(req.query.limit||50)
+    .exec(function(err, list){
+       if(err) res.status(401).json({err: err})
+       if (list) {
+        res.status(200).json(list)
+       }
+    })
+}
+
+/**
+ * List Contacts of Company
+ */
+exports.contactsByCompany = function(req, res) {
+  Contact = mongoose.model('Contact')
+  Contact
+  .find({company: req.company})
+  .sort('-created')
+  .exec(function(err, contacts) {
+    if (err) {
+      return res.json(500, {
+        error: 'Cannot list the contacts',
+        details: err
+      });
+    }
+    res.json(contacts);
+  });
+};
+
+/**
+ * Logical Delete company
+ */
+exports.del = function(req, res) {
+  var company = req.company;
+  company.status = 'removed';
+  company.save(function(err) {
+    if (err) {
+      return res.json(500, {
+        error: 'Cannot remove the company',
+        details: err
+      });
+    }
+    res.json({ sucess: true, msg: 'Company successfully removed!'});
+  });
+};
 
 /**
  * Find company by id
@@ -73,6 +125,7 @@ exports.destroy = function(req, res) {
 
   });
 };
+
 
 /**
  * Show an company

@@ -74,7 +74,11 @@ var CompanySchema = new Schema({
   created: {
     type: Date,
     default: Date.now
-  }
+  },
+  status: {
+      type: String,
+      trim: true
+    }
 });
 
 /**

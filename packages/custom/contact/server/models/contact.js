@@ -36,6 +36,10 @@ var ContactSchema = new Schema({
   company: {
     type: Schema.ObjectId,
     ref: 'Company'
+  },
+  status: {
+    type: String,
+    trim: true
   }
 });
 

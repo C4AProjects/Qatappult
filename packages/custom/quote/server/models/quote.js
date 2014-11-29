@@ -28,6 +28,7 @@ var QuoteSchema = new Schema({
     type: Date,
     default: Date.now
   },
+  services: [] // Manage company quote per service
 });
 
 /**

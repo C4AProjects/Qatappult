@@ -9,6 +9,23 @@ var mongoose = require('mongoose'),
 
 
 /**
+ * Logical Delete contact
+ */
+exports.del = function(req, res) {
+  var contact = req.contact;
+  contact.status = 'removed';
+  contact.save(function(err) {
+    if (err) {
+      return res.json(500, {
+        error: 'Cannot remove the contact',
+        details: err
+      });
+    }
+    res.json({ sucess: true, msg: 'Contact successfully removed!'});
+  });
+};
+
+/**
  * Find contact by id
  */
 exports.contact = function(req, res, next, id) {

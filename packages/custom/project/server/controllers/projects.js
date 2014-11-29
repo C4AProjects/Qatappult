@@ -9,6 +9,24 @@ var mongoose = require('mongoose'),
 
 
 /**
+ * Logical Delete project
+ */
+exports.del = function(req, res) {
+  var project = req.project;
+  project.status = 'removed';
+  project.save(function(err) {
+    if (err) {
+      return res.json(500, {
+        error: 'Cannot remove the project',
+        details: err
+      });
+    }
+    res.json({ sucess: true, msg: 'Project successfully removed!'});
+  });
+};
+
+
+/**
  * Find project by id
  */
 exports.project = function(req, res, next, id) {

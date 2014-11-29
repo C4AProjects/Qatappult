@@ -23,4 +23,21 @@ module.exports = function(Company, app, auth, database) {
       res.send(html);
     });
   });
+  
+  ///API ENDPOINTS
+  var companies = require('../controllers/companies');
+  
+  app.route('/v1/companies')
+    .get(companies.all)
+    .post(auth.requiresLogin, companies.create);
+  app.route('/v1/companies/:companyId')
+    .get(companies.show)
+    .put(auth.requiresLogin, hasAuthorization, companies.update)
+    .delete(auth.requiresLogin, hasAuthorization, companies.del);
+  app.route('/v1/companies/search/:name')
+    .get(companies.searchByName)
+  app.route('/v1/companies/:companyId/contacts')
+    .get(companies.contactsByCompany)
+  // Finish with setting up the companyId param
+  app.param('companyId', companies.company);
 };

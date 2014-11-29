@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  db:  process.env.AGNI_MONGODB_URL || 'mongodb://localhost/agni-dev',
+  db:  process.env.QATAPPULT_MONGODB_URL || 'mongodb://localhost/agni-dev',
   debug: 'true',
   mongoose: {
     debug: false
@@ -31,7 +31,7 @@ module.exports = {
     */
   },
   app: {
-    name: 'AGNI, Fitness Application - Production'
+    name: 'QATAPPULT, Fitness Application - Production'
   },
   facebook: {
     clientID: process.env.FACEBOOK_ID || '1495105934103825',

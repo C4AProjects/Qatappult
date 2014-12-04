@@ -68,3 +68,22 @@ h3 {
     font-size: 2.0em;
     font-weight: 200;
 }
+
+.qtp-header-text{
+    color: grey;
+    background-color: black;
+    padding: 10px 5px 10px 5px;
+    border-radius: 5px;
+}
+
+.navbar-inverse {
+    background-color: #26484e;
+    border-color: #022D4E;
+}
+
+.pic.password.qtp-eye {
+    width: 33px;
+    height: 31px;
+    top: 32px;
+}
+

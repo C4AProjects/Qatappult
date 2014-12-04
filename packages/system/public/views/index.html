@@ -65,75 +65,47 @@
                   </div>
                 </div>
                 <!--Social network-->
-                <div class="row">
-                  <div class="col-xs-3">
-                  </div>
-                  <div class="col-xs-3">
-                  </div>
-                  <div class="col-xs-3">
-                  </div>
-                  <div class="col-xs-3">
-                  </div>
-                </div>
-	</div>
+                <div class="login-form__right social_wrap" style="width: 100%; float: none" ng-class="{bigger:socialButtonsCounter > 4 && !global.registerForm}" data-ng-controller="AuthCtrl">              
+                    
+                    <div ng-if="socialButtons.hasOwnProperty('facebook')" class="social_icon social_icon_fb">
+                        <a href="/auth/facebook" class="button">
+                            <span>Log In With Facebook</span>
+                        </a>
+                    </div>
+                    
+                    <div ng-if="socialButtons.hasOwnProperty('twitter')" class="social_icon social_icon_tw">
+                        <a href="/auth/linkedin" class="button">
+                            <span>Log In With Twitter</span>
+                        </a>
+                    </div>
+                    
+                    <div ng-if="socialButtons.hasOwnProperty('linkedin')" class="social_icon social_icon_in">
+                        <a href="/auth/linkedin" class="button">
+                            <span>Log In With LinkedIn</span>
+                        </a>
+                    </div>
+                
+                    <div ng-if="socialButtons.hasOwnProperty('google')" class="social_icon social_icon_google">
+                        <a href="/auth/google" class="button">
+                            <span>Log In With Google</span>
+                        </a>
+                    </div>                  
+      
+        </div>
+
 	<div class="row">
 		<div class="col-md-8">
-			<form role="form">
-				<div class="form-group form-group-lg">
-					<label for="company">Company Info</label>
-					<input type="text" class="form-control" id="company" placeholder="Company Info"/>
-				</div>
-                                <div class="form-group form-group-lg">
-					<label for="website">Website URL</label>
-					<input type="text" class="form-control" id="website" placeholder="Website URL"/>
-				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<div class="form-group form-group-lg">
-                                                  <label for="city">Location</label>
-                                                  <input type="text" class="form-control" id="city" placeholder="City"/>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="form-group form-group-lg">
-                                                  <label for="city">&nbsp;</label>
-                                                  <input type="text" class="form-control" id="state" placeholder="State"/>	
-						</div>
-					</div>
-                                        <div class="col-md-4">
-						<div class="form-group form-group-lg">
-                                                  <label for="city">&nbsp;</label>
-                                                  <input type="text" class="form-control" id="country" placeholder="Country"/>	
-						</div>
-					</div>
-				</div>
-                                <div class="form-group form-group-lg">
-					<label for="email">Company Representative Email Address (This will be your Qatappult username)</label>
-					<input type="text" class="form-control" id="email" placeholder="example@email.com"/>
-				</div>
-				<div class="row">
-					<div class="col-md-6">
-						<div class="form-group form-group-lg">
-							<label for="password">Create a secure password</label>
-							<input type="password" class="form-control" id="password" placeholder="Password"/>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="form-group form-group-lg">
-							<label for="passwordconfirm">Re-enter password</label>
-							<input type="password" class="form-control" id="passwordconfirm" placeholder="Password confirm"/>
-						</div>
-					</div>
-				</div>				
-				<p>
-					<button type="button" class="btn btn-lg btn-primary btn-block">Sign Up and Continue To Services</button>
-				</p>
-				<hr/>
-			</form>
+			<div data-ng-include="'/users/views/home-signup.html'"></div>
 		</div>
 		<div class="col-md-4">
-                      <p class="bg-info" style="padding:20px; margin:20px 0">Text if needed. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. </p>	
+                      <p class="bg-info" style="padding:20px; margin:20px 0">Text if needed. Some pub :) </p>	
 		</div>
 	</div>
-
+        
+        <div class="row">
+          
+        </div>
+                
+</div>
+      
 </section>

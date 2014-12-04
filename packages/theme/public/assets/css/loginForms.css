@@ -3,7 +3,7 @@ html {
 }
 
 body.login, body.register,  body.forgot-password {
-background: url("/theme/assets/img/bg.png");
+background: url("/system/assets/img/bg-feature-01.jpg");
     height: 100%;
     position: relative;
 }

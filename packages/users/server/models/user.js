@@ -37,6 +37,7 @@ var validateUniqueEmail = function(value, callback) {
 var UserSchema = new Schema({
   name: {
     type: String,
+    trim: true,
     required: true
   },
   email: {
@@ -71,7 +72,22 @@ var UserSchema = new Schema({
   twitter: {},
   github: {},
   google: {},
-  linkedin: {}
+  linkedin: {},
+  website: String,
+  loc: {
+    city: {
+      type: String,
+      trim: true
+    },
+    state: {
+      type: String,
+      trim: true
+    },
+    country: {
+      type: String,
+      trim: true
+    }
+  }
 });
 
 /**

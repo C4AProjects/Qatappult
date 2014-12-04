@@ -64,7 +64,33 @@
 					</ul>
 				</li-->
 			</ul>
+                           
+                        <ul class="navbar-nav nav navbar-right" data-ng-hide="global.authenticated">
+                          <li>
+                            <h5 class="qtp-header-text">
+                                Already Have A Consumer Account? <a ui-sref='auth.login' style="color: #fff;font-weight: bold;" > Log In</a>
+                            </h5>
+                          </li>                          
+                          <li class="divider-vertical">&nbsp &nbsp;&nbsp;</li>
+                          <li>
+                            <h5 style="color: #fff;font-weight: bold" class="qtp-header-text">
+                              <a style="color: #fff;" ui-sref='auth.login'>Vendor Log In</a>
+                            </h5>
+                          </li>
+                       
+                          <li class="dropdown" data-ng-show="global.authenticated">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                              {{global.user.name}} <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li><a href="/logout">Log Out</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                        
 		</div>
+                
 		<!--/.nav-collapse --> 
 	</div>
 </nav>

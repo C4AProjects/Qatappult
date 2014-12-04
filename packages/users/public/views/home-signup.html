@@ -1,0 +1,96 @@
+<div data-ng-controller="RegisterCtrl">
+    <div ng-repeat="error in registerError">
+        <div class="alert alert-danger animated fadeIn">{{error.msg}}</div>
+    </div>
+    <div class="alert alert-danger animated fadeIn" ng-show="usernameError">{{usernameError}}</div>
+    <div class="alert alert-danger animated fadeIn" ng-show="emailError">{{emailError}}</div>
+    <form role="form" id="register_form" ng-submit="register()">
+            <div class="form-group form-group-lg">
+                    <label for="company">Company Info</label>
+                    <div class="input-wrapper">
+                        <input required id="company" class="form-control" type="text" name="company" placeholder="Company Info"
+                               ng-model="user.name">            
+                        <div class="error_message">Please enter a correct info #</div>
+                        <span class="pic user"></span>
+                    </div>
+            </div>
+            <div class="form-group form-group-lg">
+                    <label for="website">Website URL</label>
+                    <div class="input-wrapper">
+                        <input type="text"  id="company" class="form-control" id="website" placeholder="Website URL"
+                               ng-model="user.website">                                    
+                        
+                    </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-4">
+                            <div class="form-group form-group-lg">
+                              <label for="city">Location</label>
+                              <div class="input-wrapper">
+                                    <input type="text" required id="company" class="form-control" id="city" placeholder="City"
+                                           ng-model="user.loc.city">            
+                                    <div class="error_message">Please enter a correct info #</div>
+                                    
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-md-4">
+                            <div class="form-group form-group-lg">
+                              <label for="city">&nbsp;</label>
+                              <input type="text" class="form-control" id="state" placeholder="State" ng-model="user.loc.state"/>	
+                            </div>
+                    </div>
+                    <div class="col-md-4">
+                            <div class="form-group form-group-lg">
+                              <label for="city">&nbsp;</label>
+                              <input type="text" class="form-control" id="country" placeholder="Country" ng-model="user.loc.country"/>	
+                            </div>
+                    </div>
+            </div>
+            <div class="form-group form-group-lg">
+                    <label for="email">Company Representative Email Address (This will be your Qatappult username)</label>
+                    <div class="input-wrapper">
+                        <input required id="email_block" type="email" class="form-control" id="email" placeholder="example@email.com"
+                               ng-model="user.email">            
+                        <div class="error_message">Please enter a correct info #</div>
+                        
+                    </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-6">
+                            <div class="form-group form-group-lg">
+                                    <label for="password">Create a secure password</label>
+                                    <div class="input-wrapper">
+                                        <input required id="password_block" class="form-control" name="password" type="{{input.type}}"
+                                               placeholder="{{input.placeholder}}" ng-model="user.password">
+                            
+                                        <div class="error_message">Please enter a correct info #</div>
+                                        <span class="pic password {{input.iconClass}} qtp-eye" ng-click="togglePasswordVisible()">
+                                              
+                                        </span>
+                                    </div>
+                            </div>
+                    </div>
+                    <div class="col-md-6">
+                            <div class="form-group form-group-lg">
+                                    <label for="passwordconfirm">Re-enter password</label>
+                                    <div class="input-wrapper">
+                                        <input required id="confirm_password" class="form-control" name="confirm_password" type="{{input.type}}"
+                                               placeholder="{{input.placeholderConfirmPass}}" ng-model="user.confirmPassword">
+                            
+                                        <div class="error_message">Please enter a correct info #</div>
+                                        <span class="pic password {{input.iconClassConfirmPass}} qtp-eye" ng-click="togglePasswordConfirmVisible()">                                              
+                                        </span>
+                                    </div>
+                            </div>
+                    </div>
+            </div>				
+            <p>
+                    <button type="submit" class="btn btn-lg btn-primary btn-block">Sign Up and Continue To Services</button>
+                    
+                    <p>Already have an account? <a ui-sref='auth.login'>Log in</a></p>
+                    
+            </p>
+            <hr/>
+    </form>
+</div>

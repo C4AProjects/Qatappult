@@ -33,9 +33,9 @@ var ContactSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  company: {
+  user: {
     type: Schema.ObjectId,
-    ref: 'Company'
+    ref: 'User'
   },
   status: {
     type: String,
@@ -60,7 +60,7 @@ ContactSchema.path('lastname').validate(function(lastname) {
 ContactSchema.statics.load = function(id, cb) {
   this.findOne({
     _id: id
-  }).populate('company', 'name').exec(cb);
+  }).populate('user', 'name').exec(cb);
 };
 
 mongoose.model('Contact', ContactSchema);

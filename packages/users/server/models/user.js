@@ -73,17 +73,52 @@ var UserSchema = new Schema({
   github: {},
   google: {},
   linkedin: {},
-  website: String,
-  loc: {
-    city: {
-      type: String,
-      trim: true
+  //others info related to company
+  address: {
+    type: String,   
+    trim: true
+  },
+  address2: {
+    type: String,
+    trim: true
+  },
+  loc:{
+    country: {
+    type: String,
+    trim: true
     },
     state: {
       type: String,
       trim: true
+    },  
+    city: {
+      type: String,
+      trim: true
+    }
+  },
+  phone: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  website: {
+    type: String,
+    trim: true
+  },
+  logo: {
+    type: String,
+    trim: true
+  },
+  social: {
+    facebook: {
+    type: String,
+    trim: true
     },
-    country: {
+    twitter: {
+      type: String,
+      trim: true
+    },
+    linkedin: {
       type: String,
       trim: true
     }

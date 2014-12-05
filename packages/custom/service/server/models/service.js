@@ -50,10 +50,6 @@ var ServiceSchema = new Schema({
   user: {
     type: Schema.ObjectId,
     ref: 'User'
-  },
-  company: {
-    type: Schema.ObjectId,
-    ref: 'Company'
   }
 });
 

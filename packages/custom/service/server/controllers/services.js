@@ -21,25 +21,24 @@ exports.service = function(req, res, next, id) {
 };
 
 /**
- * Create an service
+ * Create a service
  */
 exports.create = function(req, res) {
   var service = new Service(req.body);
   service.user = req.user;
-
   service.save(function(err) {
     if (err) {
       return res.json(500, {
         error: 'Cannot save the service'
       });
     }
-    res.json(service);
-
+    res.status(201).json(service);
+    
   });
 };
 
 /**
- * Update an service
+ * Update a service
  */
 exports.update = function(req, res) {
   var service = req.service;
@@ -52,13 +51,13 @@ exports.update = function(req, res) {
         error: 'Cannot update the service'
       });
     }
-    res.json(service);
+    res.status(200).json(service);
 
   });
 };
 
 /**
- * Delete an service
+ * Delete a service
  */
 exports.destroy = function(req, res) {
   var service = req.service;
@@ -69,7 +68,7 @@ exports.destroy = function(req, res) {
         error: 'Cannot delete the service'
       });
     }
-    res.json(service);
+    res.status(200).json(service);
 
   });
 };

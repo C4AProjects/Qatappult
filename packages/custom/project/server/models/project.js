@@ -37,9 +37,9 @@ var ProjectSchema = new Schema({
     type: Date,
     default: Date.now
   },  
-  company: {
+  user: {
     type: Schema.ObjectId,
-    ref: 'Company'
+    ref: 'User'
   },
   status: {
     type: String,

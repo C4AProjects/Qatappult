@@ -15,9 +15,9 @@ var QuoteSchema = new Schema({
     type: Schema.ObjectId,
     ref: 'Project'
   },
-  company: {
+  user: {
     type: Schema.ObjectId,
-    ref: 'Company'
+    ref: 'User'
   },
   features: [],
   amount: {

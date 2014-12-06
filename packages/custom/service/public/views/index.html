@@ -1,27 +1,30 @@
-<div class="" data-ng-controller="ServiceController">
-  <h1>Example view from your new awesome package</h1>
-  <h2>Package: {{package.name}}</h2>
-  <ol>
-    <li>
-      <a href="service/example/anyone">Server route that anyone can access</a>
-    </li>
-    <li>
-      <a href="service/example/auth">Server route that requires authentication</a>
-    </li>
-    <li>
-      <a href="service/example/admin">Server route that requires admin user</a>
-    </li>
-    <li>
-      <a href="service/example/render">Raw Html rendering example from using swig</a>
-    </li>
-  </ol>
-  <h3><img src="/service/assets/img/logo.png" /></h3>
-  </br>
-  <p class="alert alert-info">You can find your package in /packages/service</p>
-  </br>
-  <p class="alert alert-warning">MEAN versions prior to 0.3.2 will be in /node_modules/service</p>
-  </br>
-  <h3><a href="http://www.mean.io/#!/docs">Documentation</a></h3>
-  </br>
-</div>
+
+  <div class="container container-steps body-container" data-ng-controller="ServiceController" style="margin-top: 30px">
+	<div class="alert alert-success text-center" role="alert" > <strong>Congratulations!</strong> You have created your Qatappult account. <a href="#">Visit your dashboard</a> or continue completing your profile. </div>
+	<div class="page-header">
+		<h1>Join Qatappult As A Service Provider</h1>
+                <div class="row">
+                  <div class="col-xs-1"> <span class="badge pull-right" style="background-color: #DACFD3;">1</span> </div>
+                  <div class="col-xs-11">
+                        <h4>Sign Up</h4>                        
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-1"> <span class="badge pull-right">2</span> </div>
+                  <div class="col-xs-11">
+                        <h4>Services You Provide</h4>                        
+                  </div>
+                </div>
+            
+                <div class="row">
+                        <div class="col-md-8">
+                                <div data-ng-include="'/service/views/create-service.html'"></div>
+                        </div>
+                        <div class="col-md-4">
+                              	
+                        </div>
+                </div>        
+                
+        </div>
+
 

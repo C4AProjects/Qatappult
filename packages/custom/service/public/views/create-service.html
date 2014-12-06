@@ -1,0 +1,108 @@
+<div data-ng-controller="ServiceController">
+    <div data-ng-repeat="service in services" class="panel panel-default panel-body" style="border-radius: 0">
+         <h5 style="opacity: 0.5">Service {{$index +1}}</h5><h6 style="float:right"><a ng-click="editing(service._id)" style="cursor: pointer">edit</a></h6>
+         <h4 class="qtp-service-label">Mobile Development using ASP.NET</h4>
+         <p>
+             Average Cost: ${{service.averageCost}}.00 <br>
+             Hourly Rate: ${{service.hourlyRate}}.00  <br>
+             Project Duration: {{service.duration}} <br>
+             Staff For Service: {{service.staff}} <br>
+         </p>
+     </div>
+    <p><a  ng-click="isAddingService=!isAddingService" ng-hide="isAddingService" style="cursor: pointer">+Add Another Service</a></p>   
+    <div class="panel panel-primary panel-body" ng-show="isAddingService" style="border-radius: 0">   
+        <form role="form" id="register_form" ng-submit="create()">
+                <div class="row">
+                        <div class="col-md-4">
+                                <div class="form-group form-group-lg">
+                                  <label for="city">Service</label>
+                                  <div class="input-wrapper">                                    
+                                        <select class="form-control" required id="signup-quickform-desired" ng-model="service.type">
+                                                <option value="">-- Service Type --</option>
+                                                <option>Web development</option>
+                                                <option>Mobile development</option>
+                                        </select>
+                                        <div class="error_message">Please enter a correct info #</div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="col-md-4">
+                                <div class="form-group form-group-lg">
+                                  <label for="city">&nbsp;</label>
+                                  <select class="form-control" id="technology" ng-model="service.technology">
+                                        <option value="">-- Technology --</option>
+                                        <option>Android</option>
+                                        <option>Phonegap</option>
+                                  </select>                              
+                                </div>
+                        </div>
+                        <div class="col-md-4">
+                                <div class="form-group form-group-lg">
+                                  <label for="city">&nbsp;</label>
+                                  <select class="form-control" id="scope" placeholder="Scope" ng-model="service.scope">
+                                        <option value="">-- Scope --</option>
+                                        <option>Small</option>
+                                        <option>Medium</option>
+                                  </select>
+                                </div>
+                        </div>
+                </div>
+                
+                <div class="row">
+                        <div class="col-md-6">
+                                <div class="form-group form-group-lg">
+                                  <label for="cost">Average Cost For This Service</label>
+                                  <div class="input-wrapper">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">$</span>
+                                            <input type="text" class="form-control qtp-service-input" id="cost" ng-model="service.averageCost">
+                                            <span class="input-group-addon">.00</span>
+                                        </div>          
+                                        <div class="error_message">Please enter a correct info #</div>                                    
+                                    </div>
+                                </div>
+                        </div>
+                       
+                        <div class="col-md-6">
+                                <div class="form-group form-group-lg">
+                                  <label for="rate">Hourly Rate For This Service</label>
+                                  <input type="number" class="form-control qtp-service-input" id="rate" ng-model="service.hourlyRate"/>	
+                                </div>
+                        </div>
+                </div>
+                <div class="row">
+                        <div class="col-md-6">
+                                <div class="form-group form-group-lg">
+                                  <label for="duration">Average Project Duration</label>
+                                  <div class="input-wrapper">                                    
+                                        <select class="form-control qtp-service-input" required id="duration" ng-model="service.duration">
+                                                <option>Three months</option>
+                                                <option>One year</option>
+                                        </select>
+                                        <div class="error_message">Please enter a correct info #</div>
+                                    </div>
+                                </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                                <div class="form-group form-group-lg">
+                                  <label for="staff">Staff Capacity For This Service</label>
+                                  <input type="number" class="form-control qtp-service-input" id="staff" ng-model="service.staff" ng-model="service.HourlyRate"/>	
+                                </div>
+                        </div>
+                </div>				                
+                <p>
+                        <button type="submit" ng-click="add()" class="btn btn-lg btn-primary">Save Service</button>
+                        <button type="button" ng-click="isAddingService=!isAddingService"  class="btn btn-lg btn-default" style="border: 0">Cancel</button>
+                       
+                </p>
+        </form>
+    </div>        
+            
+    <p>
+        <a class="btn btn-lg btn-primary btn-block" ui-sref='contact'>
+            Continue to Contact Information
+        </a>
+    </p>
+    
+</div>

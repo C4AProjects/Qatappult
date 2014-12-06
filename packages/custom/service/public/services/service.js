@@ -1,9 +1,9 @@
 'use strict';
 
-angular.module('mean.service').factory('Service', [
-  function() {
+angular.module('mean.service').factory('Service', ['$http', function($http){
     return {
-      name: 'service'
+      services: [],
+      name: 'service'      
     };
   }
 ]);

@@ -100,14 +100,8 @@ angular.module('mean.users')
 
       $scope.register = function() {
         $scope.usernameError = null;
-        $scope.registerError = null;
-        $http.post('/register', {
-          email: $scope.user.email,
-          password: $scope.user.password,
-          confirmPassword: $scope.user.confirmPassword,
-          username: $scope.user.username,
-          name: $scope.user.name
-        })
+        $scope.registerError = null;      
+        $http.post('/register',  $scope.user)
           .success(function() {
             // authentication OK
             $scope.registerError = 0;
@@ -115,7 +109,7 @@ angular.module('mean.users')
             Global.user = $rootScope.user;
             Global.authenticated = !! $rootScope.user;
             $rootScope.$emit('loggedin');
-            $location.url('/');
+            $location.url('/service');
           })
           .error(function(error) {
             // Error: authentication failed

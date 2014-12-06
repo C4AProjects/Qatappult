@@ -1,3 +1,17 @@
 .service-example h1 {
   background-color: purple
 }
+
+form label{
+  opacity: 0.7
+}
+
+.qtp-service-input{
+    width: 60%;
+    text-align: right;
+}
+
+.qtp-service-label {
+  color: #428bca;
+  background-color: inherit;
+}

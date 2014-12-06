@@ -36,8 +36,9 @@ var ServiceSchema = new Schema({
     required: true
   },
   duration: {
-    type: Number,
-    required: true
+    type: String,
+    required: true,
+    trim: true
   },
   staff: { //staff Capacity
     type: Number,

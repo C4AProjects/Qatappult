@@ -26,6 +26,7 @@ exports.service = function(req, res, next, id) {
 exports.create = function(req, res) {
   var service = new Service(req.body);
   service.user = req.user;
+  console.dir(service)
   service.save(function(err) {
     if (err) {
       return res.json(500, {

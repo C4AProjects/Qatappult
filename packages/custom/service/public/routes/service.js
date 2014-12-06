@@ -2,8 +2,8 @@
 
 angular.module('mean.service').config(['$stateProvider',
   function($stateProvider) {
-    $stateProvider.state('service example page', {
-      url: '/service/example',
+    $stateProvider.state('service', {
+      url: '/service',
       templateUrl: 'service/views/index.html'
     });
   }

@@ -5,6 +5,8 @@
  */
 var mongoose = require('mongoose'),
   Service = mongoose.model('Service'),
+  ServiceType = mongoose.model('ServiceType'),
+  Duration = mongoose.model('Duration'),
   _ = require('lodash');
 
 
@@ -92,6 +94,36 @@ exports.all = function(req, res) {
       });
     }
     res.json(services);
+
+  });
+};
+
+/**
+ * List of Services type
+ */
+exports.serviceTypes = function(req, res) {
+  ServiceType.find().exec(function(err, serviceTypes) {
+    if (err) {
+      return res.json(500, {
+        error: 'Cannot list the service types'
+      });
+    }
+    res.json(serviceTypes);
+
+  });
+};
+
+/**
+ * List of duration
+ */
+exports.durations = function(req, res) {
+  Duration.find().exec(function(err, durations) {
+    if (err) {
+      return res.json(500, {
+        error: 'Cannot list durations'
+      });
+    }
+    res.json(durations);
 
   });
 };

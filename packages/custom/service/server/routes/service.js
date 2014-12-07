@@ -12,7 +12,12 @@ module.exports = function(Service, app, auth, database) {
   app.route('/users/:userId/services/:serviceId')
     .get(services.show)
     .put(auth.requiresLogin, services.update)
-    .delete(auth.requiresLogin, services.destroy);  
+    .delete(auth.requiresLogin, services.destroy);
+  app.route('/services/types')
+    .get(services.serviceTypes);
+  app.route('/services/durations')
+    .get(services.durations);
+    
   // Finish with setting up the serviceId param
   app.param('serviceId', services.service);
    // Setting up the userId param

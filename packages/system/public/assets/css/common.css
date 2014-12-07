@@ -87,3 +87,19 @@ h3 {
     top: 32px;
 }
 
+.qtp-badge-disabled {
+    background-color: #DACFD3;
+    font-size: 1.5em;
+    border-radius: 50px;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    padding: 8px;
+    margin: 10px 0;
+    font-weight: lighter;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+}

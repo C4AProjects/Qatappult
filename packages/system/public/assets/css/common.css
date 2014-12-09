@@ -103,3 +103,7 @@ h3 {
     white-space: nowrap;
     vertical-align: baseline;
 }
+
+.qtp-container{
+    margin: 70px;
+}

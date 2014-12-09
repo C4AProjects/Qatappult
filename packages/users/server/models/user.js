@@ -78,10 +78,6 @@ var UserSchema = new Schema({
     type: String,   
     trim: true
   },
-  address2: {
-    type: String,
-    trim: true
-  },
   loc:{
     country: {
     type: String,
@@ -123,9 +119,17 @@ var UserSchema = new Schema({
     }
   },
   company:{
+    address1: {
+      type: String,
+      trim: true
+    },
+    address2: {
+      type: String,
+      trim: true
+    },
     country: {
-    type: String,
-    trim: true
+      type: String,
+      trim: true
     },
     state: {
       type: String,
@@ -136,11 +140,11 @@ var UserSchema = new Schema({
       trim: true
     },
     zipcode: {
-    type: String,    
-    trim: true
+      type: String,    
+      trim: true
     },
     yearsInBiz:{
-    type: Number
+      type: String
     },
     teamSize:{
       type: Number

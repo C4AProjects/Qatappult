@@ -9,7 +9,8 @@ var mongoose = require('mongoose'),
   config = require('meanio').loadConfig(),
   crypto = require('crypto'),
   nodemailer = require('nodemailer'),
-  templates = require('../template');
+  templates = require('../template'),
+    _ = require('lodash');
 
 /**
  * Auth callback
@@ -104,6 +105,27 @@ exports.create = function(req, res, next) {
     res.status(200);
   });
 };
+
+/**
+ * Update an user
+ */
+exports.update = function(req, res) {
+  var user = req.user;
+
+  user = _.extend(user, req.body);
+
+  user.save(function(err) {
+    if (err) {
+      return res.status(500).json( {
+        error: 'Cannot update the user'
+      });
+    }
+    res.status(200).json(user);
+
+  });
+};
+
+
 /**
  * Send User
  */

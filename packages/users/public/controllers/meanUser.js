@@ -71,8 +71,8 @@ angular.module('mean.users')
       };
     }
   ])
-  .controller('RegisterCtrl', ['$scope', '$rootScope', '$http', '$location', 'Global',
-    function($scope, $rootScope, $http, $location, Global) {
+  .controller('RegisterCtrl', ['$scope', '$rootScope', '$http', '$location', 'Global', '$window',
+    function($scope, $rootScope, $http, $location, Global, $window) {
       $scope.user = {};
       $scope.global = Global;
       $scope.global.registerForm = true;
@@ -110,6 +110,7 @@ angular.module('mean.users')
             Global.authenticated = !! $rootScope.user;
             $rootScope.$emit('loggedin');
             $location.url('/service');
+            $window.location.reload();
           })
           .error(function(error) {
             // Error: authentication failed
@@ -118,6 +119,16 @@ angular.module('mean.users')
             } else if (error === 'Email already taken') {
               $scope.emailError = error;
             } else $scope.registerError = error;
+          });
+      };
+      
+      $scope.contact = {};
+      $scope.contact.company = {};
+      
+      $scope.saveContact = function() {       
+        $http.put('/edit/' + $scope.global.user._id ,  $scope.contact)
+          .success(function() {            
+            $location.url('/dashboard');
           });
       };
     }

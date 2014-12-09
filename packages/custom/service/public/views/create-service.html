@@ -11,7 +11,7 @@
             <div data-ng-controller="ServiceController">
                 <div data-ng-repeat="service in services" class="panel panel-default panel-body" style="border-radius: 0">
                      <h5 style="opacity: 0.5">Service {{$index +1}}</h5><h6 style="float:right"><a ng-click="editing(service._id)" style="cursor: pointer">edit</a></h6>
-                     <h4 class="qtp-service-label">Mobile Development using ASP.NET</h4>
+                     <h4 class="qtp-service-label">{{service.type}} using {{service.technology}}</h4>
                      <p>
                          Average Cost: ${{service.averageCost}}.00 <br>
                          Hourly Rate: ${{service.hourlyRate}}.00  <br>
@@ -20,7 +20,7 @@
                      </p>
                  </div>
                 <p><a  ng-click="isAddingService=!isAddingService" ng-hide="isAddingService" style="cursor: pointer">+Add Another Service</a></p>   
-                <div class="panel panel-primary panel-body" ng-show="isAddingService" style="border-radius: 0">   
+                <div class="panel panel-primary panel-body" ng-show="isAddingService||services.length==0" style="border-radius: 0">   
                     <form role="form" id="register_form" ng-submit="create()">
                             <div class="row">
                                     <div class="col-md-4">
@@ -41,6 +41,7 @@
                                               <label for="technology">&nbsp;</label>
                                               <select class="form-control" id="technology" ng-model="service.technology">
                                                     <option value="">-- Technology --</option>
+                                                    <option>Html5</option>
                                                     <option>Android</option>
                                                     <option>Phonegap</option>
                                               </select>                              

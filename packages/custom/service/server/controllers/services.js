@@ -87,7 +87,7 @@ exports.show = function(req, res) {
  * List of Services
  */
 exports.all = function(req, res) {
-  Service.find().sort('-created').populate('user', 'name username').exec(function(err, services) {
+  Service.find({user:req.user}).sort('-created').populate('user', 'name username').exec(function(err, services) {
     if (err) {
       return res.json(500, {
         error: 'Cannot list the services'

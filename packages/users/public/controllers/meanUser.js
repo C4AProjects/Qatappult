@@ -52,7 +52,9 @@ angular.module('mean.users')
           .success(function(response) {
             // authentication OK
             $scope.loginError = 0;
-            $rootScope.user = response.user;
+            $rootScope.user = response.user;           
+            Global.user = $rootScope.user;
+            Global.authenticated = !! $rootScope.user;                      
             $rootScope.$emit('loggedin');
             if (response.redirect) {
               if (window.location.href === response.redirect) {
@@ -62,7 +64,7 @@ angular.module('mean.users')
                 window.location = response.redirect;
               }
             } else {
-              $location.url('/');
+              $location.url('/service');
             }
           })
           .error(function() {
@@ -110,7 +112,6 @@ angular.module('mean.users')
             Global.authenticated = !! $rootScope.user;
             $rootScope.$emit('loggedin');
             $location.url('/service');
-            $window.location.reload();
           })
           .error(function(error) {
             // Error: authentication failed

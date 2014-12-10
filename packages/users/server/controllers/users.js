@@ -16,7 +16,7 @@ var mongoose = require('mongoose'),
  * Auth callback
  */
 exports.authCallback = function(req, res) {
-  res.redirect('/');
+  res.redirect('/#!/service');
 };
 
 /**
@@ -24,9 +24,9 @@ exports.authCallback = function(req, res) {
  */
 exports.signin = function(req, res) {
   if (req.isAuthenticated()) {
-    return res.redirect('/');
+    return res.redirect('#!/service');
   }
-  res.redirect('#!/login');
+  res.redirect('#!/auth/login');
 };
 
 /**

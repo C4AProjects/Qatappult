@@ -34,14 +34,14 @@ module.exports = {
     name: 'QATAPPULT, Fitness Application - Production'
   },
   facebook: {
-    clientID: process.env.FACEBOOK_ID || '1495105934103825',
-    clientSecret:  process.env.FACEBOOK_SECRET || '05e5fa118a171a3c3025ec70de7807f1',
-    callbackURL: process.env.FACEBOOK_CALLBACK_URL || 'http://localhost:3000/auth/facebook/callback'
+    clientID: process.env.FACEBOOK_ID || '1387820881512411',
+    clientSecret:  process.env.FACEBOOK_SECRET || '8d3d52d608e6bc8a3932705f8f1499c4',
+    callbackURL: process.env.FACEBOOK_CALLBACK_URL || 'http://qatappult.c4asolution.com:8080/auth/facebook/callback'
   },
   twitter: {
-    clientID: process.env.TWITTER_CONSUMER_KEY || 'TWITTER_CONSUMER_KEY',
-    clientSecret: process.env.TWITTER_CONSUMER_SECRET || 'CONSUMER_SECRET',
-    callbackURL: 'http://localhost:3000/auth/twitter/callback'
+    clientID: process.env.TWITTER_CONSUMER_KEY || 'ubCwA1YVOXOR8NfUOv01U4WGk',
+    clientSecret: process.env.TWITTER_CONSUMER_SECRET || 'mOWV8d9ivNWnvi7prshyXGLKWbJy1ys3NKC1IAN63Up0G1Pb7s',
+    callbackURL: 'http://qatappult.c4asolution.com:8080/auth/twitter/callback'
   },
   github: {
     clientID: 'DEFAULT_APP_ID',

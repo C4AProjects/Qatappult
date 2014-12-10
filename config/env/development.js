@@ -10,14 +10,14 @@ module.exports = {
     name: 'QATAPPULT Fitness'
   },
   facebook: {
-    clientID: '1495105934103825',
-    clientSecret:  '05e5fa118a171a3c3025ec70de7807f1',
+    clientID: '742345012506480',
+    clientSecret:  'c4de262a1761aebc4c6c44dfdd9e359f',
     callbackURL: 'http://localhost:3000/auth/facebook/callback'
   },
   twitter: {
-    clientID: 'TWITTER_CONSUMER_KEY',
-    clientSecret: 'CONSUMER_SECRET',
-    callbackURL: 'http://localhost:3000/auth/twitter/callback'
+    clientID: process.env.TWITTER_CONSUMER_KEY || 'ubCwA1YVOXOR8NfUOv01U4WGk',
+    clientSecret: process.env.TWITTER_CONSUMER_SECRET || 'mOWV8d9ivNWnvi7prshyXGLKWbJy1ys3NKC1IAN63Up0G1Pb7s',
+    callbackURL: 'http://127.0.0.1:3000/auth/twitter/callback'
   },
   github: {
     clientID: 'DEFAULT_APP_ID',

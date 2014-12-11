@@ -10,6 +10,11 @@ angular.module('mean.service').config(['$stateProvider',
     .state('contact', {
       url: '/contact',
       templateUrl: 'service/views/contact.html'
+    })
+    .state('services', {
+      parent: 'dashboard',
+      url: '/services',
+      templateUrl: 'service/views/list.html'
     });
   }
 ]);

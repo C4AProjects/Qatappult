@@ -130,7 +130,19 @@ exports.update = function(req, res) {
  * Send User
  */
 exports.me = function(req, res) {
-  res.json(req.user || null);
+  res.json(req.profile || req.user || null);
+};
+
+exports.mejson = function(req, res) {
+  User
+    .findOne({
+      _id: req.user._id
+    })
+    .exec(function(err, user) {
+      if (err) res.status(500).json({errors: err});
+      if (!user) res.status(500).json({err: 'Failed to load User '});
+      res.status(200).json(user);
+    });
 };
 
 /**

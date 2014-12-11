@@ -122,12 +122,19 @@ angular.module('mean.users')
             } else $scope.registerError = error;
           });
       };
-      
       $scope.contact = {};
-      $scope.contact.company = {};
+      $http.get('/users/' + $scope.global.user._id + '/me').success(function(data){
+          $scope.contact = data.company;
+       });
       
-      $scope.saveContact = function() {       
-        $http.put('/edit/' + $scope.global.user._id ,  $scope.contact)
+      $scope.countries = [];
+      $http.get('/static/countries').success(function(data){
+          $scope.countries = data;
+       });
+
+      $scope.saveContact = function() {
+        var info= { company: $scope.contact};
+        $http.put('/edit/' + $scope.global.user._id ,  info)
           .success(function() {            
             $location.url('/dashboard');
           });

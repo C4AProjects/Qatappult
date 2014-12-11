@@ -1,0 +1,12 @@
+<div data-ng-controller="ServiceController">
+<div data-ng-repeat="service in services" class="panel panel-default panel-body" style="border-radius: 0">
+                     <h5 style="opacity: 0.5">Service {{$index +1}}</h5><h6 style="float:right"><a ng-click="editing(service._id)" style="cursor: pointer">edit</a></h6>
+                     <h4 class="qtp-service-label">{{service.type}} using {{service.technology}}</h4>
+                     <p>
+                         Average Cost: ${{service.averageCost}}.00 <br>
+                         Hourly Rate: ${{service.hourlyRate}}.00  <br>
+                         Project Duration: {{service.duration}} <br>
+                         Staff For Service: {{service.staff}} <br>
+                     </p>
+</div>
+</div>

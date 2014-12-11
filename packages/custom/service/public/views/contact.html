@@ -31,7 +31,7 @@
                                                                 <label for="address1">Address</label>
                                                                 <div class="input-wrapper">
                                                                       <input type="text" id="address1" class="form-control"  placeholder="Address 1"
-                                                                             ng-model="contact.company.address1">            
+                                                                             ng-model="contact.address1">            
                                                                       <div class="error_message">Please enter a correct info #</div>
                                                                       
                                                                   </div>
@@ -44,7 +44,7 @@
                                                             <div class="form-group form-group-lg">
                                                                 <div class="input-wrapper">
                                                                       <input type="text" id="address2" class="form-control" placeholder="Address 2"
-                                                                             ng-model="contact.company.address2">            
+                                                                             ng-model="contact.address2">            
                                                                       <div class="error_message">Please enter a correct info #</div>
                                                                       
                                                                   </div>
@@ -56,8 +56,8 @@
                                                 <div class="col-md-4">
                                                         <div class="form-group form-group-lg">
                                                          <div class="input-wrapper">
-                                                                <input type="text" id="company" class="form-control" id="city" placeholder="City"
-                                                                       ng-model="contact.company.city">            
+                                                                <input type="text" id="city" class="form-control" id="city" placeholder="City"
+                                                                       ng-model="contact.city">            
                                                                 <div class="error_message">Please enter a correct info #</div>
                                                                 
                                                             </div>
@@ -65,23 +65,22 @@
                                                 </div>
                                                 <div class="col-md-4">
                                                         <div class="form-group form-group-lg">
-                                                          <input type="text" class="form-control" id="state" placeholder="State" ng-model="contact.company.state"/>	
+                                                          <input type="text" class="form-control" id="state" placeholder="State" ng-model="contact.state"/>	
                                                         </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                         <div class="form-group form-group-lg">
-                                                           <input type="text" class="form-control" id="zipcode" placeholder="Postal Code" ng-model="contact.company.zipcode"/>	
+                                                           <input type="text" class="form-control" id="zipcode" placeholder="Postal Code" ng-model="contact.zipcode"/>	
                                                         </div>
                                                 </div>
                                         </div>
                                             
                                             <div class="row">
                                                     <div class="col-md-12">
-                                                            <div class="form-group form-group-lg">
-                                                               <select class="form-control" id="yearsInBiz" ng-model="contact.company.yearsInBiz">
+                                                            <div class="form-group form-group-lg">                                                               
+                                                               <select class="form-control" id="yearsInBiz" ng-model="contact.country">
                                                                     <option value="">--Select country --</option>
-                                                                    <option>USA</option>
-                                                                    <option>Senegal</option>                                                    
+                                                                    <option ng-repeat="item in countries" value="{{item.name}}" >{{item.name}}</option>                                                                    
                                                               </select> 
                                                             </div>
                                                     </div>
@@ -91,7 +90,7 @@
                                                     <div class="col-md-6">
                                                             <div class="form-group form-group-lg">
                                                               <label for="yearsInBiz">Years in Business</label>
-                                                               <select class="form-control" id="yearsInBiz" ng-model="contact.company.yearsInBiz">
+                                                               <select class="form-control" id="yearsInBiz" ng-model="contact.yearsInBiz">
                                                                     <option value="">--  --</option>
                                                                     <option>1 Year</option>
                                                                     <option>2 - 5 Years</option>
@@ -104,7 +103,7 @@
                                                     <div class="col-md-6">
                                                             <div class="form-group form-group-lg">
                                                               <label for="teamSize">Team Size</label>
-                                                              <input type="number" class="form-control qtp-service-input" id="teamSize" ng-model="contact.company.teamSize"/>	
+                                                              <input type="number" class="form-control qtp-service-input" id="teamSize" ng-model="contact.teamSize"/>	
                                                             </div>
                                                     </div>
                                             </div>

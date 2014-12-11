@@ -31,3 +31,8 @@ exports.render = function(req, res) {
     adminEnabled: isAdmin() && mean.moduleEnabled('mean-admin')
   });
 };
+
+var countries = require('../../../../config/countries.json');
+exports.countries = function(req, res){
+  res.status(200).json(countries);
+};

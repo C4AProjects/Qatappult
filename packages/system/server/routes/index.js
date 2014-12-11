@@ -8,4 +8,7 @@ module.exports = function(System, app, auth, database) {
     .get(index.render);
     
   app.all('/v1/*', auth.requiresLogin); //All API requests require  user authentication
+  
+  app.route('/static/countries')
+    .get(index.countries);
 };

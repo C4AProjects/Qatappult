@@ -4,9 +4,23 @@ angular.module('mean.service').controller('ServiceController', ['$scope', 'Globa
   function($scope, Global, Service, $http, $location) {
     $scope.global = Global;
     $scope.service = { loc:{}};
+    $scope.isAddingService = false;
     $scope.package = {
       name: 'service'
     };
+    
+    
+    if (!$scope.serviceTypes) {
+      $http.get('/services/types').success(function(data){         
+          $scope.serviceTypes = data;
+       });
+    }
+    
+    $scope.selectServiceType = function(id){
+      $scope.technologies = ($scope.serviceTypes.filter(function(type) {
+                              return type.name === id;
+                            }))[0].technologies;
+    }
     
     $scope.services = [];
     if ($scope.services.length==0) {

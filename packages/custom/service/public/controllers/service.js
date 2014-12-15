@@ -10,7 +10,7 @@ angular.module('mean.service').controller('ServiceController', ['$scope', 'Globa
     };
     
     $scope.show_btn_contact = true; 
-    if ($location.$$path == "/dashboard/services") {
+    if ($location.$$path === '/dashboard/services') {
       $scope.show_btn_contact = false;      
     }
     
@@ -62,8 +62,8 @@ angular.module('mean.service').controller('ServiceController', ['$scope', 'Globa
            });
         }else{
           $http.post('/users/' + $scope.global.user._id + '/services',  $scope.service)
-           .success(function() {
-             $scope.services.push($scope.service);
+           .success(function(data) {
+             $scope.services.push(data);
              $scope.service = { loc:{}};
              //$location.url('/service');
            })
@@ -71,7 +71,7 @@ angular.module('mean.service').controller('ServiceController', ['$scope', 'Globa
              console.log(error);
            });
         }
-        
+        $scope.isAddingService = false;
       }
     }
     

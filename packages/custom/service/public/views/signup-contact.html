@@ -1,0 +1,46 @@
+  <div class="container container-steps body-container"  style="margin-top: 30px">
+	<div class="page-header">
+		<h1>Join Qatappult As A Service Provider</h1>
+                <div class="row">
+                  <div class="col-xs-1"> <span class="pull-right qtp-badge-disabled" >1</span> </div>
+                  <div class="col-xs-11">
+                        <h4>Sign Up</h4>                        
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"> <span class="pull-right qtp-badge-disabled" >2</span> </div>
+                    <div class="col-xs-11">
+                          <h4>Services You Provide</h4>                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1"> <span class="badge pull-right">3</span> </div>
+                    <div class="col-xs-11">
+                          <h4>Company Information</h4>                        
+                    </div>
+                </div>
+                            
+                <div class="row">
+                        <div class="col-md-8">
+			      <div data-ng-controller="RegisterCtrl">                
+                                  
+                                <form role="form" id="register_form" ng-submit="saveContact()">
+           
+                                    <span data-ng-include="'/service/views/includes/contact.html'"></span>
+                                    <p>
+                                        <button type="submit" class="btn btn-lg btn-primary btn-block">
+                                            Continue to My Dashboard
+                                        </button>
+                                    </p>
+                                </form>
+                                                 
+                            
+			      </div>
+                
+                        </div>
+                        <div class="col-md-4">
+                                
+                        </div>
+                </div>
+        </div>
+  </div>

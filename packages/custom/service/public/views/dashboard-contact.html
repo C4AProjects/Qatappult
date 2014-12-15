@@ -1,0 +1,20 @@
+<div data-ng-controller="RegisterCtrl" style="background-color:#fff">                
+   <div class="row">
+        <div class="col-md-8">                               
+        <form role="form" id="register_form" ng-submit="saveContact('noredirect')">
+        <p><a  ng-click="isEditingInfo=!isEditingInfo"  style="cursor: pointer">Edit Contact info</a></p>
+        
+            <span data-ng-include="'/service/views/includes/contact.html'"></span>
+            <p>
+                <button type="submit" ng-show="isEditingInfo" class="btn btn-lg btn-primary">
+                    Save
+                </button>
+                <button type="button" ng-show="isEditingInfo" ng-click="isEditingInfo=!isEditingInfo"  class="btn btn-lg btn-default" style="border: 0">Cancel</button>
+            </p>
+        </form>
+        </div>
+        <div class="col-md-4">
+                
+        </div>
+    
+</div>

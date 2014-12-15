@@ -64,7 +64,7 @@ angular.module('mean.users')
                 window.location = response.redirect;
               }
             } else {
-              $location.url('/service');
+              $location.url('/dashboard');
             }
           })
           .error(function() {

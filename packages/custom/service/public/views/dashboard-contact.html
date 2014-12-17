@@ -1,0 +1,50 @@
+<div data-ng-controller="RegisterCtrl" >
+   <p><a  ng-click="isEditingInfo=!isEditingInfo"  style="cursor: pointer">Edit Contact info</a></p>
+   <div class="row" style="background-color:#fff" ng-show="isEditingInfo">
+        <div class="col-md-8">                               
+        <form role="form" id="register_form" ng-submit="saveContact('noredirect')">        
+            <span data-ng-include="'/service/views/includes/contact.html'"></span>
+            <p>
+                <button type="submit" ng-show="isEditingInfo" ng-click="isEditingInfo=!isEditingInfo" class="btn btn-lg btn-primary">
+                    Save
+                </button>
+                <button type="button" ng-show="isEditingInfo" ng-click="isEditingInfo=!isEditingInfo"  class="btn btn-lg btn-default" style="border: 0">Cancel</button>
+            </p>
+        </form>
+        </div>
+        <div class="col-md-4">
+                
+        </div>
+    
+   </div>
+   <div class="row" style="background-color:#fff" ng-show="!isEditingInfo">
+        <div class="col-md-8">                               
+                <div class="form-group form-group-lg">
+                        <label>Address 1</label>
+                        <p>
+                         {{contact.address1}} <br>                         
+                        </p>
+                        <label>Address 2</label>
+                        <p>
+                         {{contact.address2}} <br>
+                         {{contact.city}}  / 
+                         {{contact.state}} / 
+                         {{contact.zipcode}} / 
+                         {{contact.country}}  <br>
+                        </p>
+                        <label>Years in Business</label>
+                        <p>
+                         {{contact.yearsInBiz}}  <br>
+                        </p>
+                        <label>Team size</label>
+                        <p>
+                         {{contact.teamSize}}  <br>
+                        </p>
+                </div>
+        </div>
+        <div class="col-md-4">
+                
+        </div>
+    
+   </div>
+</div>

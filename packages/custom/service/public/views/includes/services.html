@@ -95,13 +95,13 @@
                             </div>				                
                             <p>
                                     <button type="submit" ng-click="add()" class="btn btn-lg btn-primary">Save Service</button>
-                                    <button type="button" ng-click="isAddingService=!isAddingService"  class="btn btn-lg btn-default" style="border: 0">Cancel</button>
+                                    <button type="button" ng-click="cancel()"  class="btn btn-lg btn-default" style="border: 0">Cancel</button>
                                    
                             </p>
                     </form>
                 </div>        
                         
-                <p>
+                <p ng-show="show_btn_contact">
                     <a class="btn btn-lg btn-primary btn-block" ui-sref='contact'>
                         Continue to Contact Information
                     </a>

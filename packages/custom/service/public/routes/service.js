@@ -9,12 +9,17 @@ angular.module('mean.service').config(['$stateProvider',
     })
     .state('contact', {
       url: '/contact',
-      templateUrl: 'service/views/contact.html'
+      templateUrl: 'service/views/signup-contact.html'
     })
     .state('services', {
       parent: 'dashboard',
       url: '/services',
-      templateUrl: 'service/views/list.html'
-    });
+      templateUrl: 'service/views/includes/services.html'
+    })
+    .state('contacts', {
+        parent: 'dashboard',
+        url: '/contacts',
+        templateUrl: 'service/views/dashboard-contact.html'
+      })
   }
 ]);

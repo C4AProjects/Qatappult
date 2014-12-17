@@ -9,6 +9,10 @@ angular.module('mean.service').controller('ServiceController', ['$scope', 'Globa
       name: 'service'
     };
     
+    $scope.show_btn_contact = true; 
+    if ($location.$$path === '/dashboard/services') {
+      $scope.show_btn_contact = false;      
+    }
     
     if (!$scope.serviceTypes) {
       $http.get('/services/types').success(function(data){         
@@ -29,37 +33,57 @@ angular.module('mean.service').controller('ServiceController', ['$scope', 'Globa
        });
     }
  
+    $scope.cancel = function(){      
+      $scope.service = { loc:{}};
+      $scope.isAddingService = false;
+    }
+    
     $scope.add = function(){
       if (!$scope.global.user._id) {        
         $http.get('/users/me').success(function(data){         
            $scope.global.user = data;
-           $http.post('/users/' + $scope.global.user._id + '/services',  $scope.service)
-           .success(function() {
-             $scope.services.push($scope.service);
-             $scope.service = { loc:{}};
-             //$location.url('/service');
-           })
-           .error(function(error) {
-             console.log(error);
-           });
+           post();
         });
       }else{
-        $http.post('/users/' + $scope.global.user._id + '/services',  $scope.service)
-           .success(function() {
-             $scope.services.push($scope.service);
+        post();
+      }
+      
+      function post() {
+        if ($scope.service._id) {
+          $http.put('/users/' + $scope.global.user._id + '/services/' + $scope.service._id,  $scope.service)
+           .success(function(data) {
+            var id = $scope.service._id;
+             $scope.services.forEach(function(obj, index){
+              if (id === obj._id) {
+                $scope.services[index] = data;
+                return ;
+              }
+             })
              $scope.service = { loc:{}};
              //$location.url('/service');
            })
            .error(function(error) {
              console.log(error);
            });
+        }else{
+          $http.post('/users/' + $scope.global.user._id + '/services',  $scope.service)
+           .success(function(data) {
+             $scope.services.push(data);
+             $scope.service = { loc:{}};
+             //$location.url('/service');
+           })
+           .error(function(error) {
+             console.log(error);
+           });
+        }
+        $scope.isAddingService = false;
       }
-      
     }
     
     $scope.editing = function(serviceId){
       $http.get('/users/' + $scope.global.user._id + '/services/' + serviceId).success(function(data){         
           $scope.service = data;
+          $scope.selectServiceType($scope.service.type);
           $scope.isAddingService = true;
        });
     }

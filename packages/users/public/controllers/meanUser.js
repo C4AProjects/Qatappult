@@ -64,7 +64,7 @@ angular.module('mean.users')
                 window.location = response.redirect;
               }
             } else {
-              $location.url('/service');
+              $location.url('/dashboard');
             }
           })
           .error(function() {
@@ -132,11 +132,11 @@ angular.module('mean.users')
           $scope.countries = data;
        });
 
-      $scope.saveContact = function() {
+      $scope.saveContact = function(noredirect) {
         var info= { company: $scope.contact};
         $http.put('/edit/' + $scope.global.user._id ,  info)
           .success(function() {            
-            $location.url('/dashboard');
+            if(!noredirect)$location.url('/dashboard');
           });
       };
     }

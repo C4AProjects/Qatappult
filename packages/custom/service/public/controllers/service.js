@@ -33,6 +33,11 @@ angular.module('mean.service').controller('ServiceController', ['$scope', 'Globa
        });
     }
  
+    $scope.cancel = function(){      
+      $scope.service = { loc:{}};
+      $scope.isAddingService = false;
+    }
+    
     $scope.add = function(){
       if (!$scope.global.user._id) {        
         $http.get('/users/me').success(function(data){         

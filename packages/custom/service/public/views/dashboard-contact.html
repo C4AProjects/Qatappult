@@ -5,7 +5,7 @@
         <form role="form" id="register_form" ng-submit="saveContact('noredirect')">        
             <span data-ng-include="'/service/views/includes/contact.html'"></span>
             <p>
-                <button type="submit" ng-show="isEditingInfo" class="btn btn-lg btn-primary">
+                <button type="submit" ng-show="isEditingInfo" ng-click="isEditingInfo=!isEditingInfo" class="btn btn-lg btn-primary">
                     Save
                 </button>
                 <button type="button" ng-show="isEditingInfo" ng-click="isEditingInfo=!isEditingInfo"  class="btn btn-lg btn-default" style="border: 0">Cancel</button>

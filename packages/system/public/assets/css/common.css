@@ -72,8 +72,21 @@ h3 {
 .qtp-header-text{
     color: grey;
     background-color: black;
-    padding: 10px 5px 10px 5px;
+    padding: 10px;
     border-radius: 5px;
+}
+
+.logo {
+    
+    background: url("/theme/assets/img/qtp_logo.png") no-repeat;
+    margin-top: 6px;
+    width: 207px;
+}
+
+
+
+h5.qtp-header-text{
+   font-weight:normal;
 }
 
 .navbar-inverse {

@@ -293,8 +293,9 @@ background: url("/system/assets/img/bg-feature-01.jpg");
     height: 100%;
     float: left;
     width: 270px;
-    /* padding-left: 26px; */
+ /* padding-left: 26px; */
 }
+
 .login-form__right .social_wrap {
     width: 235px;
     height: 270px;

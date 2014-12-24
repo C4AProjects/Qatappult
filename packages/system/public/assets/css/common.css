@@ -88,6 +88,10 @@ h5.qtp-header-text{
     border-color: #022D4E;
 }
 
+.navbar-brand {
+    margin-top: -10px;
+}
+
 .pic.password.qtp-eye {
     width: 33px;
     height: 31px;

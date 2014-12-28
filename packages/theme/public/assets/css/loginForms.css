@@ -50,14 +50,14 @@ background: url("/system/assets/img/bg-feature-01.jpg");
     background: #ffffff;
     box-shadow: 0 1px 3px 1px #003644;
     margin-top: 35px;
-    left: 50%;
-    position: relative;
+    /*left: 50%;*/
+    /*position: relative;*/
 }
 
 .main-form {
-    width: 748px;
-    height: 435px;
-    margin-left: -374px;
+   max-width: 510px;*/
+    /*height: 435px; */
+    /*margin-left: -374px;*/
 }
 
 .main-form.register-form {
@@ -65,7 +65,7 @@ background: url("/system/assets/img/bg-feature-01.jpg");
 }
 
 .login-form__left {
-    width: 440px;
+    width: 100%;  /*440px;*/
     height: 100%;
     float: left;
     padding: 34px 0 0 27px;
@@ -90,7 +90,7 @@ background: url("/system/assets/img/bg-feature-01.jpg");
 }
 
 .main-form .input-wrapper input {
-    width: 401px;
+    width:   100%; /*401px;*/
     border: 1px solid #d3d3d3;
     border-radius: 5px;
     padding: 18px 0 18px 16px;
@@ -448,3 +448,9 @@ background: url("/system/assets/img/bg-feature-01.jpg");
     width: 465px;
     margin-left: -232px;
 }
+
+
+
+
+
+ß

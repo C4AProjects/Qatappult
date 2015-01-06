@@ -61,7 +61,7 @@ background: url("/system/assets/img/bg-feature-01.jpg");
 }
 
 .main-form.register-form {
-    height: 622px;
+    /*height: 622px;*/
 }
 
 .login-form__left {

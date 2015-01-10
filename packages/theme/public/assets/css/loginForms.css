@@ -213,6 +213,7 @@ background: url("/system/assets/img/bg-feature-01.jpg");
 
 .login-form__left .button_login {
     margin-top: 23px;
+    margin-bottom: 23px;
 }
 
 .submit_button {
@@ -252,6 +253,7 @@ background: url("/system/assets/img/bg-feature-01.jpg");
 
 .button_register {
     margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 .button_login a,
